@@ -1,0 +1,19 @@
+{
+  "name": "check",
+  "version": "1.0.0",
+  "description": "A tool for Graphics team to make their life smooth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anshul-Thakur/PIXI-Graphics-Tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anshul-Thakur/PIXI-Graphics-Tool/issues"
+  },
+  "homepage": "https://github.com/Anshul-Thakur/PIXI-Graphics-Tool#readme"
+}
