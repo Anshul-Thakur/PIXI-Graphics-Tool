@@ -11,9 +11,14 @@ class TextEditorComponent extends React.Component {
     } 
     render() {
         return(
-            <div>
-                <input required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
-                <button onClick = {()=> {this.props.updateTextData(this.textData)}}>Compile</button>
+            <div class= "container">
+                <div class>
+                    <div class = "textField-Header">Please Enter The Text</div>
+                    <div>
+                        <input class = "textField" required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
+                        <button onClick = {()=> {this.props.updateTextData(this.textData)}}>Compile</button>
+                    </div>
+                </div>               
             </div>
         );
     }

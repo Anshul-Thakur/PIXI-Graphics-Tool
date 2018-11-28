@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -16,6 +12,31 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.textField-Header {
+  font-size:25px;
+  font-weight: bold;
+}
+
+.textField {
+  width: 60%;
+}
+
+button {
+  margin-left: 20%;
+}
+.textPropertiesContainer {
+  margin-top: 20px;
+}
+canvas {
+  width: 30%;
+  position: absolute;
+  right: 0;
+}
+.App { 
+  position: absolute;
+  width: 70%;
 }
 
 .App-link {
