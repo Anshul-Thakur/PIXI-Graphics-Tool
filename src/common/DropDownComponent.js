@@ -4,7 +4,6 @@ class DropDownComponent extends React.Component {
 
     getOptions = () => {
         return this.props.propsOptions.map((option)=>{
-            console.log(option.value === this.props.defaultValue);
             if(option.value === this.props.defaultValue) {
                 return <option selected value ={option.value}>{option.key}</option>
             } else {

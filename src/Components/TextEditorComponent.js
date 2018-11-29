@@ -11,8 +11,8 @@ class TextEditorComponent extends React.Component {
     } 
     render() {
         return(
-            <div class= "container">
-                <div class>
+            <div >
+                <div>
                     <div class = "textField-Header">Please Enter The Text</div>
                     <div>
                         <input class = "textField" required onChange= {this.onTextChange.bind(this)} type = "text" ></input>

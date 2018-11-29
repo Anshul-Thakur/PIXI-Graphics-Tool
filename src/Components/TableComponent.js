@@ -39,12 +39,14 @@ class TableComponent extends React.Component {
    
     render() {
         return(
-            <div class="container textPropertiesContainer">
-               <table class="table table-bordered">
-                   <tbody>
-                   <tr>
+            <div class="textPropertiesContainer">
+               <table class="table table-bordered table-striped">
+                   <thead>
+                       <tr>
                         {this.getHeaders()}
-                   </tr>
+                       </tr> 
+                   </thead>
+                   <tbody>
                    {this.getPropsAsRows()}
                    </tbody>
                </table>

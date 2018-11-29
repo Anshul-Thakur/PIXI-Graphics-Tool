@@ -17,7 +17,7 @@ class TextBoxComponent extends React.Component {
     render() {
         return(
             <div>
-               <input value={this.state.propValue} onChange = {this.onChange} type="text"></input> 
+               <input value={this.state.propValue} onChange = {this.onChange.bind(this)} type="text"></input> 
             </div>
         );
     }

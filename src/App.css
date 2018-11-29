@@ -1,42 +1,32 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .textField-Header {
   font-size:25px;
   font-weight: bold;
 }
 
 .textField {
-  width: 60%;
+  width: 25%;
+}
+
+#root {
+  margin: 1% 0 0 1%;
+  width:99%;
 }
 
 button {
-  margin-left: 20%;
+  float: right;
 }
 .textPropertiesContainer {
-  margin-top: 20px;
+  margin: 20px 0 20px 0;
+  overflow-y: scroll;
+  height: 300px;
+  width: 1280px;
 }
 canvas {
-  width: 30%;
-  position: absolute;
-  right: 0;
+  width: 1280px;
+  height: 720px;
 }
 .App { 
-  position: absolute;
-  width: 70%;
+  width: 1280px;
 }
 
 .App-link {
