@@ -51,224 +51,7 @@ class App extends Component {
     };
 
     this.textStyle = this.cloneObject(this.state.textStyle);
-
-
-    // this.componentData = {
-    //   headers: ["PIXI-Text Property", "Description", "UserInput"],
-    //   textProps: [{
-    //     propName: "align",
-    //     propValue: "left",
-    //     propDescription: "Hello",
-    //     propInputType: "dropDown",
-    //     propOptions: [{
-    //       value:"left",
-    //       key: "Left"
-    //     }, {
-    //       key: "Right",
-    //       value: "right"
-    //     }, {
-    //       key: "Top",
-    //       value: "top"
-    //     }, {
-    //       key: "Bottom",
-    //       value: "bottom"
-    //     }]
-    //   }, 
-    //   {
-    //     propName: "breakWords",
-    //     propValue: false,
-    //     propDescription: "breakWords",
-    //     propInputType: "dropDown",
-    //     propOptions: [{
-    //       value: true,
-    //       key: "True"
-    //     }, {
-    //       value: false,
-    //       key: "False"
-    //     }]
-    //   },
-    //   {
-    //     propName: "dropShadow",
-    //     propValue: false,
-    //     propDescription: "DropShadow",
-    //     propInputType: "dropDown",
-    //     propOptions: [{
-    //       value: true,
-    //       key: "True"
-    //     }, {
-    //       value: false,
-    //       key: "False"
-    //     }]
-    //   }, 
-    //   ,
-    //   {
-    //     propName: "trim",
-    //     propValue: false,
-    //     propDescription: "Trim",
-    //     propInputType: "dropDown",
-    //     propOptions: [{
-    //       value: true,
-    //       key: "True"
-    //     }, {
-    //       value: false,
-    //       key: "False"
-    //     }]
-    //   },
-    //   ,
-    //   {
-    //     propName: "wordWrap",
-    //     propValue: false,
-    //     propDescription: "wordWrap",
-    //     propInputType: "dropDown",
-    //     propOptions: [{
-    //       value: true,
-    //       key: "True"
-    //     }, {
-    //       value: false,
-    //       key: "False"
-    //     }]
-    //   },
-    //   {
-    //     propName: "fill",
-    //     propValue: "black",
-    //     propDescription: "Hi",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "dropShadowColor",
-    //     propValue: "#000000",
-    //     propDescription: "dropShadowColor",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "fontFamily",
-    //     propValue: "Arial",
-    //     propDescription: "fontFamily",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "fontStyle",
-    //     propValue: "normal",
-    //     propDescription: "Hi",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "fontVariant",
-    //     propValue: "normal",
-    //     propDescription: "normal",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "dropShadowColor",
-    //     propValue: "#000000",
-    //     propDescription: "dropShadowColor",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "fontWeight",
-    //     propValue: "Arial",
-    //     propDescription: "fontWeight",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "lineJoin",
-    //     propValue: "miter",
-    //     propDescription: "lineJoin",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "stroke",
-    //     propValue: "black",
-    //     propDescription: "stroke",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "textBaseline",
-    //     propValue: "alphabetic",
-    //     propDescription: "textBaseline",
-    //     propInputType: "textBox",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "dropShadowAlpha",
-    //     propValue: 1,
-    //     propDescription: "DropShadow",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "dropShadowBlur",
-    //     propValue: 0,
-    //     propDescription: "DropShadowBlur",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "dropShadowDistance",
-    //     propValue: 5,
-    //     propDescription: "dropShadowDistance",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "fontSize",
-    //     propValue: 26,
-    //     propDescription: "fontSize",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "letterSpacing",
-    //     propValue: 0,
-    //     propDescription: "letterSpacing",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "lineHeight",
-    //     propValue: 0,
-    //     propDescription: "lineHeight",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "miterLimit",
-    //     propValue: 10,
-    //     propDescription: "miterLimit",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "padding",
-    //     propValue: 0,
-    //     propDescription: "padding",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "strokeThickness",
-    //     propValue: 0,
-    //     propDescription: "strokeThickness",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   },
-    //   {
-    //     propName: "wordWrapWidth",
-    //     propValue: 100,
-    //     propDescription: "wordWrapWidth",
-    //     propInputType: "number",
-    //     propOptions:[]
-    //   }]
-    // }
+    this.defaultTextStyle = this.cloneObject(this.state.textStyle);
   }
 
   componentWillMount() {
@@ -307,15 +90,28 @@ class App extends Component {
       this.textStyle[textProperty] = value;
   }
 
+  getChangedProps=(e)=>{
+    var changedPropsObj = {};
+
+    var changedPropsObj = Object.keys(this.defaultTextStyle).reduce((accumulator, key)=> {
+      if(this.state.textStyle[key]!==this.defaultTextStyle[key]) {
+        accumulator[key] = this.state.textStyle[key];
+      }
+      return accumulator;
+    },{});
+
+    console.log(changedPropsObj);
+  }
   getAppComponents() {
     if(this.state.load) {
-        return <div class="App">
+        return <div className="App">
+                <button onClick= {this.getChangedProps}>JSON </button>
                 <TextEditorComponent updateTextData= {this.onUpdateTextData.bind(this)}/>
                 <TableComponent onChange = {this.onUserInput.bind(this)} data = {this.componentData}></TableComponent>
                 <DisplayComponent data = {this.state}/>
               </div>
     } else {
-      return <div>...</div>
+      return <div>Loading...</div>
     }
   }
   render() {

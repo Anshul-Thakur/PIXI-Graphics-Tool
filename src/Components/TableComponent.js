@@ -7,11 +7,11 @@ class TableComponent extends React.Component {
 
     getHeaders = () => {
         return this.props.data.headers.map((header, index)=>{
-            return <th scope="col">{header}</th>});
+            return <th key={"heading-textprops-" + index} scope="col">{header}</th>});
     }
 
     getPropsAsRows = () => {
-        return this.props.data.textProps.map((propObj)=>{
+        return this.props.data.textProps.map((propObj, index)=>{
             var ComponentType;
             
             switch(propObj.propInputType) {
@@ -27,7 +27,7 @@ class TableComponent extends React.Component {
                 default :
                     ComponentType = TextBoxComponent;
             }
-            return <tr>
+            return <tr key={"row-textProps-" +index}>
                 <td>{propObj.propName}</td>
                 <td>{propObj.propDescription}</td>
                 <td>
@@ -39,8 +39,8 @@ class TableComponent extends React.Component {
    
     render() {
         return(
-            <div class="textPropertiesContainer">
-               <table class="table table-bordered table-striped">
+            <div className="textPropertiesContainer">
+               <table className="table table-bordered table-striped">
                    <thead>
                        <tr>
                         {this.getHeaders()}

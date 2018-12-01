@@ -3,11 +3,11 @@ import React from 'react';
 class DropDownComponent extends React.Component {
 
     getOptions = () => {
-        return this.props.propsOptions.map((option)=>{
+        return this.props.propsOptions.map((option, index)=>{
             if(option.value === this.props.defaultValue) {
-                return <option selected value ={option.value}>{option.key}</option>
+                return <option key = {"drop-down-selected"} selected value ={option.value}>{option.key}</option>
             } else {
-                return <option value ={option.value}>{option.key}</option>
+                return <option key = {"drop-down-unselected" + index} value ={option.value}>{option.key}</option>
             }
            
         })
