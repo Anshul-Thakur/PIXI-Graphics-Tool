@@ -107,7 +107,7 @@
 		"propOptions": []
 	}, {
 		"propName": "fontWeight",
-		"propValue": "Arial",
+		"propValue": "normal",
 		"propDescription": "The font weight ('normal', 'bold', 'bolder', 'lighter' and '100', '200', '300', '400', '500', '600', '700', 800' or '900')",
 		"propInputType": "textBox",
 		"propOptions": []
