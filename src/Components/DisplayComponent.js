@@ -9,7 +9,10 @@ class DisplayComponent extends React.Component {
         
     }
     componentDidMount = () => {
-        document.getElementById('root').append(this.app.view);
+        var divElement = document.createElement("div");
+        divElement.appendChild(this.app.view);
+        divElement.className = "canvas-wrapper";
+        document.getElementById('root').append(divElement);
     }
 
     render() {

@@ -77,15 +77,20 @@ class App extends Component {
   }
 
   onUserInput = (e, textProperty) => {
-    
       var value = e.target.value.trim();
-  
+
       if(value === 'true') {
         value  = true;
       } else if(value === 'false') {
         value = false
+      } else if(value==="0"){
+        value = 0;
       } else {
-        value  = +value || value;
+        value  = (+value && typeof value === 'Number') || value;
+      }
+
+      if(typeof value === 'string' && value.indexOf(",")>-1) {
+          value = value.split(",");
       }
       this.textStyle[textProperty] = value;
   }

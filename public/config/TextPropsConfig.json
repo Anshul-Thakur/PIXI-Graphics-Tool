@@ -97,8 +97,17 @@
 		"propName": "fontStyle",
 		"propValue": "normal",
 		"propDescription": "The font style ('normal', 'italic' or 'oblique')",
-		"propInputType": "textBox",
-		"propOptions": []
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": "normal",
+			"key": "Normal"
+		}, {
+			"value": "italic",
+			"key": "Italic"
+		}, {
+			"value": "oblique",
+			"key": "Oblique"
+		}]
 	}, {
 		"propName": "fontVariant",
 		"propValue": "normal",
