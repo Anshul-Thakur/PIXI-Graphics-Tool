@@ -17,6 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showJSON:false,
       text: "",
       load: false,
       textStyle: {
@@ -47,7 +48,8 @@ class App extends Component {
         textBaseline: 'alphabetic',
         wordWrap: false,
         wordWrapWidth: 100
-      }
+      },
+      changedPropsObj: {}
     };
 
     this.textStyle = this.cloneObject(this.state.textStyle);
@@ -77,6 +79,11 @@ class App extends Component {
   }
 
   onUserInput = (e, textProperty) => {
+
+      this.setState({
+        showJSON: false,
+        createdJSON: ""
+      });
       var value = e.target.value.trim();
 
 
@@ -96,9 +103,7 @@ class App extends Component {
       } else {
         value  = +value || value; // Converting string to Number.
       }
-      
-      
-      
+            
       this.textStyle[textProperty] = value;
   }
 
@@ -117,20 +122,31 @@ class App extends Component {
   getChangedProps=(e)=>{
     var changedPropsObj = {};
 
-    var changedPropsObj = Object.keys(this.defaultTextStyle).reduce((accumulator, key)=> {
+    changedPropsObj = Object.keys(this.defaultTextStyle).reduce((accumulator, key)=> {
       if(this.state.textStyle[key]!==this.defaultTextStyle[key]) {
         accumulator[key] = this.state.textStyle[key];
       }
       return accumulator;
     },{});
+
+    this.setState({
+      showJSON: true,
+      createdJSON:JSON.stringify(changedPropsObj)
+    });
   }
   getAppComponents() {
     if(this.state.load) {
         return <div className="App">
-                <button onClick= {this.getChangedProps}>JSON </button>
                 <TextEditorComponent updateTextData= {this.onUpdateTextData.bind(this)}/>
                 <TableComponent onChange = {this.onUserInput.bind(this)} data = {this.componentData}></TableComponent>
                 <DisplayComponent data = {this.state}/>
+                <div className = "container">
+                  <button  onClick= {this.getChangedProps}>Create JSON </button>
+                  <div hidden={!this.state.showJSON}>
+                    <textarea rows="4" cols="50" value={this.state.createdJSON}></textarea> 
+                  </div>
+                </div>
+                
               </div>
     } else {
       return <div>Loading...</div>
