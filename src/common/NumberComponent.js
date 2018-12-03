@@ -9,7 +9,9 @@ class NumberComponent extends React.Component {
     }
 
     onChange = (e) => {
-        
+        if(e.target.value<0) {
+            e.target.value = "0";
+        }
         this.setState({
             propValue : e.target.value
         });
@@ -19,7 +21,7 @@ class NumberComponent extends React.Component {
     render() {
         return(
             <div>
-               <input value  = {this.state.propValue} onChange = {this.onChange.bind(this)} type="number"></input> 
+               <input min="0" value = {this.state.propValue} onChange = {this.onChange.bind(this)} type="number"></input> 
             </div>
         );
     }

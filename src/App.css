@@ -4,7 +4,14 @@
 }
 
 .textField {
-  width: 25%;
+  width: 35%;
+}
+
+.container {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgb(233, 236, 239);
+  border-radius: 0.3rem;
 }
 
 #root {
@@ -16,17 +23,19 @@ button {
   float: right;
 }
 .textPropertiesContainer {
-  margin: 20px 0 20px 0;
   overflow-y: scroll;
   width: 100%;
   height: 300px;
 }
-.canvas-wrapper {
-  margin-left:2%;
-  width: 45%;
+
+.canvas-container {
+  width: 48%;
   float:left;
+  margin-left: 20px;
+}
+.canvas-wrapper {
   overflow: scroll;
-  height: 95vh;
+  height:89vh;
 }
 canvas {
   width: 1280px;

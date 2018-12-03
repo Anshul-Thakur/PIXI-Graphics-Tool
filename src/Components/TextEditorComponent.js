@@ -15,14 +15,12 @@ class TextEditorComponent extends React.Component {
     } 
     render() {
         return(
-            <div >
+            <div className={"container"}>
+                <div className = "textField-Header">Please Enter The Text</div>
                 <div>
-                    <div className = "textField-Header">Please Enter The Text</div>
-                    <div>
-                        <input className = "textField" required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
-                        <button disabled={!this.state.text} onClick = {()=> {this.props.updateTextData(this.state)}}>Compile</button>
-                    </div>
-                </div>               
+                    <input className = "textField" required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
+                    <button disabled={!this.state.text} onClick = {()=> {this.props.updateTextData(this.state)}}>Compile</button>
+                </div>             
             </div>
         );
     }

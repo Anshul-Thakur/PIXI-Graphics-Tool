@@ -39,6 +39,7 @@ class TableComponent extends React.Component {
    
     render() {
         return(
+            <div className ="container">
             <div className="textPropertiesContainer">
                <table className="table table-bordered table-striped">
                    <thead>
@@ -50,6 +51,7 @@ class TableComponent extends React.Component {
                    {this.getPropsAsRows()}
                    </tbody>
                </table>
+            </div>
             </div>
         );
     }

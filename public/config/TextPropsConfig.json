@@ -46,6 +46,12 @@
 		"propInputType": "number",
 		"propOptions": []
 	}, {
+		"propName": "dropShadowAngle",
+		"propValue": "0.5",
+		"propDescription": "Set a angle of the drop shadow",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
 		"propName": "dropShadowBlur",
 		"propValue": 0,
 		"propDescription": "Set a shadow blur radius",
@@ -73,13 +79,19 @@
 		"propName": "fillGradientType",
 		"propValue": 0,
 		"propDescription": "If fill is an array of colours to create a gradient, this can change the type/direction of the gradient",
-		"propInputType": "number",
-		"propOptions": []
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": 0,
+			"key": "Linear"
+		}, {
+			"value": 1,
+			"key": "Vertical"
+		}]
 	}, {
 		"propName": "fillGradientStops",
 		"propValue": 0,
 		"propDescription": "If fill is an array of colours to create a gradient, this array can set the stop points (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.",
-		"propInputType": "number",
+		"propInputType": "textbox",
 		"propOptions": []
 	}, {
 		"propName": "fontFamily",
@@ -112,8 +124,14 @@
 		"propName": "fontVariant",
 		"propValue": "normal",
 		"propDescription": "The font variant ('normal' or 'small-caps')",
-		"propInputType": "textBox",
-		"propOptions": []
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": "noraml",
+			"key": "Normal"
+		}, {
+			"value": "small-caps",
+			"key": "Small-Caps"
+		}]
 	}, {
 		"propName": "fontWeight",
 		"propValue": "normal",
@@ -142,8 +160,17 @@
 		"propName": "lineJoin",
 		"propValue": "miter",
 		"propDescription": "The lineJoin property sets the type of corner created, it can resolve spiked text issues. Possible values 'miter' (creates a sharp corner), 'round' (creates a round corner) or 'bevel' (creates a squared corner)",
-		"propInputType": "textBox",
-		"propOptions": []
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": "meter",
+			"key": "Meter"
+		}, {
+			"value": "round",
+			"key": "Round"
+		}, {
+			"value": "blevel",
+			"key": "Blevel"
+		}]
 	}, {
 		"propName": "miterLimit",
 		"propValue": 10,

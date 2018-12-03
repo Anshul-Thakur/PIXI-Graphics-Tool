@@ -79,20 +79,39 @@ class App extends Component {
   onUserInput = (e, textProperty) => {
       var value = e.target.value.trim();
 
-      if(value === 'true') {
+
+      if(e.target.name === "fillGradientStops") {
+        this.setTextStyleWithInput(this.setfillgradientData(value), textProperty);
+        return;
+      }
+
+      if (typeof value === 'string' && value.indexOf(",")>-1) {
+        value = value.split(",");
+      } else if(value === 'true') { // Converting [true,false] of string into bolean
         value  = true;
       } else if(value === 'false') {
         value = false
-      } else if(value==="0"){
+      } else if(value==="0") { // Handling "0" scenario
         value = 0;
       } else {
-        value  = (+value && typeof value === 'Number') || value;
+        value  = +value || value; // Converting string to Number.
       }
-
-      if(typeof value === 'string' && value.indexOf(",")>-1) {
-          value = value.split(",");
-      }
+      
+      
+      
       this.textStyle[textProperty] = value;
+  }
+
+  setTextStyleWithInput = (value, textProperty) => {
+    this.textStyle[textProperty] = value;
+  }
+
+  setfillgradientData = (value) => {
+    value = value.split(",");
+
+    return value.map((val)=>{
+      return +val;
+    });
   }
 
   getChangedProps=(e)=>{
@@ -104,8 +123,6 @@ class App extends Component {
       }
       return accumulator;
     },{});
-
-    console.log(changedPropsObj);
   }
   getAppComponents() {
     if(this.state.load) {
@@ -124,7 +141,6 @@ class App extends Component {
         <div>
           {this.getAppComponents()}
         </div>
-        
     );
     
     
