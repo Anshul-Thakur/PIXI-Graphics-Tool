@@ -1,0 +1,214 @@
+{
+	"headers": ["PIXI-Text Property", "Description", "UserInput"],
+	"textProps": [{
+		"propName": "align",
+		"propValue": "left",
+		"propDescription": "Alignment for multiline text ('left', 'center' or 'right'), does not affect single line text",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": "left",
+			"key": "Left"
+		}, {
+			"key": "Right",
+			"value": "right"
+		}, {
+			"key": "Center",
+			"value": "center"
+		}]
+	}, {
+		"propName": "breakWords",
+		"propValue": false,
+		"propDescription": "Indicates if lines can be wrapped within words, it needs wordWrap to be set to true",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": true,
+			"key": "True"
+		}, {
+			"value": false,
+			"key": "False"
+		}]
+	}, {
+		"propName": "dropShadow",
+		"propValue": false,
+		"propDescription": "Set a drop shadow for the text",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": true,
+			"key": "True"
+		}, {
+			"value": false,
+			"key": "False"
+		}]
+	}, {
+		"propName": "dropShadowAlpha",
+		"propValue": 1,
+		"propDescription": "Set alpha for the drop shadow",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "dropShadowBlur",
+		"propValue": 0,
+		"propDescription": "Set a shadow blur radius",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "dropShadowColor",
+		"propValue": "#000000",
+		"propDescription": "A fill style to be used on the dropshadow e.g 'red', '#00FF00'",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "dropShadowDistance",
+		"propValue": 5,
+		"propDescription": "Set a distance of the drop shadow",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "fill",
+		"propValue": "black",
+		"propDescription": "A canvas fillstyle that will be used on the text e.g 'red', '#00FF00'. Can be an array to create a gradient eg ['#000000','#FFFFFF']",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "fillGradientType",
+		"propValue": 0,
+		"propDescription": "If fill is an array of colours to create a gradient, this can change the type/direction of the gradient",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "fillGradientStops",
+		"propValue": 0,
+		"propDescription": "If fill is an array of colours to create a gradient, this array can set the stop points (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "fontFamily",
+		"propValue": "Arial",
+		"propDescription": "The font family",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "fontSize",
+		"propValue": 26,
+		"propDescription": "The font size (as a number it converts to px, but as a string, equivalents are '26px','20pt','160%' or '1.6em')",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "fontStyle",
+		"propValue": "normal",
+		"propDescription": "The font style ('normal', 'italic' or 'oblique')",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "fontVariant",
+		"propValue": "normal",
+		"propDescription": "The font variant ('normal' or 'small-caps')",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "fontWeight",
+		"propValue": "normal",
+		"propDescription": "The font weight ('normal', 'bold', 'bolder', 'lighter' and '100', '200', '300', '400', '500', '600', '700', 800' or '900')",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "leading",
+		"propValue": 0,
+		"propDescription": "The space between lines",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "letterSpacing",
+		"propValue": 0,
+		"propDescription": "The amount of spacing between letters, default is 0",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "lineHeight",
+		"propValue": 0,
+		"propDescription": "The line height, a number that represents the vertical space that a letter uses",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "lineJoin",
+		"propValue": "miter",
+		"propDescription": "The lineJoin property sets the type of corner created, it can resolve spiked text issues. Possible values 'miter' (creates a sharp corner), 'round' (creates a round corner) or 'bevel' (creates a squared corner)",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "miterLimit",
+		"propValue": 10,
+		"propDescription": "The miter limit to use when using the 'miter' lineJoin mode. This can reduce or increase the spikiness of rendered text.",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "padding",
+		"propValue": 0,
+		"propDescription": "Occasionally some fonts are cropped. Adding some padding will prevent this from happening by adding padding to all sides of the text.",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "stroke",
+		"propValue": "black",
+		"propDescription": "A canvas fillstyle that will be used on the text stroke e.g 'blue', '#FCFF00'",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "strokeThickness",
+		"propValue": 0,
+		"propDescription": "A number that represents the thickness of the stroke. Default is 0 (no stroke)",
+		"propInputType": "number",
+		"propOptions": []
+	}, {
+		"propName": "trim",
+		"propValue": false,
+		"propDescription": "Trim",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": true,
+			"key": "True"
+		}, {
+			"value": false,
+			"key": "False"
+		}]
+	}, {
+		"propName": "textBaseline",
+		"propValue": "alphabetic",
+		"propDescription": "The baseline of the text that is rendered.",
+		"propInputType": "textBox",
+		"propOptions": []
+	}, {
+		"propName": "whiteSpace",
+		"propValue": "pre",
+		"propDescription": "Determines whether newlines & spaces are collapsed or preserved 'normal' (collapse, collapse), 'pre' (preserve, preserve) | 'pre-line' (preserve, collapse). It needs wordWrap to be set to true",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": "normal",
+			"key": "Normal"
+		}, {
+			"value": "pre",
+			"key": "PRE"
+		}, {
+            "value": "pre-line",
+            "key": "PRE-LINE"
+        }]
+	}, {
+		"propName": "wordWrap",
+		"propValue": false,
+		"propDescription": "Indicates if word wrap should be used",
+		"propInputType": "dropDown",
+		"propOptions": [{
+			"value": true,
+			"key": "True"
+		}, {
+			"value": false,
+			"key": "False"
+		}]
+	}, {
+		"propName": "wordWrapWidth",
+		"propValue": 100,
+		"propDescription": "The width at which text will wrap, it needs wordWrap to be set to true",
+		"propInputType": "number",
+		"propOptions": []
+	}]
+}

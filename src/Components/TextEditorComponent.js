@@ -3,17 +3,26 @@ import React from 'react';
 class TextEditorComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.textData = {};
+        this.state = {
+            text: "" 
+        };
     }
 
     onTextChange(e) {
-        this.textData.text = e.target.value;
+        this.setState({
+            text: e.target.value
+        });
     } 
     render() {
         return(
-            <div>
-                <input required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
-                <button onClick = {()=> {this.props.updateTextData(this.textData)}}>Compile</button>
+            <div >
+                <div>
+                    <div className = "textField-Header">Please Enter The Text</div>
+                    <div>
+                        <input className = "textField" required onChange= {this.onTextChange.bind(this)} type = "text" ></input>
+                        <button disabled={!this.state.text} onClick = {()=> {this.props.updateTextData(this.state)}}>Compile</button>
+                    </div>
+                </div>               
             </div>
         );
     }
