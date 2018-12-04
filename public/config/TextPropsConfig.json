@@ -126,7 +126,7 @@
 		"propDescription": "The font variant ('normal' or 'small-caps')",
 		"propInputType": "dropDown",
 		"propOptions": [{
-			"value": "noraml",
+			"value": "normal",
 			"key": "Normal"
 		}, {
 			"value": "small-caps",
