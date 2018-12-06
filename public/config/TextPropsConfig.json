@@ -71,9 +71,9 @@
 		"propOptions": []
 	}, {
 		"propName": "fill",
-		"propValue": "black",
+		"propValue": ["black"],
 		"propDescription": "A canvas fillstyle that will be used on the text e.g 'red', '#00FF00'. Can be an array to create a gradient eg ['#000000','#FFFFFF']",
-		"propInputType": "textBox",
+		"propInputType": "color-picker",
 		"propOptions": []
 	}, {
 		"propName": "fillGradientType",

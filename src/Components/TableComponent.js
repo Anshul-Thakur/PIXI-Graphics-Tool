@@ -2,6 +2,7 @@ import React from 'react';
 import DropDownComponent from  '../common/DropDownComponent';
 import TextBoxComponent from  '../common/TextBoxComponent';
 import NumberComponent from '../common/NumberComponent';
+import ColorPickerComponent from '../common/ColorPickerComponent';
 
 class TableComponent extends React.Component {
 
@@ -24,6 +25,10 @@ class TableComponent extends React.Component {
                 case "number" : 
                     ComponentType = NumberComponent;
                     break;
+                case "color-picker" : 
+                    ComponentType = ColorPickerComponent;
+                    break;  
+
                 default :
                     ComponentType = TextBoxComponent;
             }

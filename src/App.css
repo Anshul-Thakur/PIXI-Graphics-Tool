@@ -52,6 +52,12 @@ canvas {
   color: #61dafb;
 }
 
+.selected-color {
+  margin-right: 5px;
+  padding: 2px;
+  background: grey;  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

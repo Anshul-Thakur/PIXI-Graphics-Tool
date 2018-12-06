@@ -29,7 +29,7 @@ class App extends Component {
         dropShadowBlur: 0,
         dropShadowColor: '#000000',
         dropShadowDistance:	5,
-        fill: 'black',
+        fill: ['black'],
         fillGradientType: 	PIXI.TEXT_GRADIENT.LINEAR_VERTICAL,
         fillGradientStops: [],
         fontFamily: 'Arial',
@@ -79,18 +79,17 @@ class App extends Component {
   }
 
   onUserInput = (e, textProperty) => {
+      var value;
 
-      this.setState({
-        showJSON: false,
-        createdJSON: ""
-      });
-      var value = e.target.value.trim();
-
-
-      if(e.target.name === "fillGradientStops") {
+      if(textProperty === "fillGradientStops") {
         this.setTextStyleWithInput(this.setfillgradientData(value), textProperty);
         return;
+      } else if (textProperty ==="fill") {
+        this.setTextStyleWithInput(e, textProperty);
+        return;      
       }
+
+      value = e.target.value.trim();
 
       if (typeof value === 'string' && value.indexOf(",")>-1) {
         value = value.split(",");
@@ -105,10 +104,23 @@ class App extends Component {
       }
             
       this.textStyle[textProperty] = value;
+
+      this.setState({
+        textStyle : this.textStyle,
+        showJSON: false,
+        createdJSON: ""
+      });
   }
 
   setTextStyleWithInput = (value, textProperty) => {
+  
     this.textStyle[textProperty] = value;
+
+    this.setState({
+      textStyle : this.textStyle,
+      showJSON: false,
+      createdJSON: ""
+    });
   }
 
   setfillgradientData = (value) => {
@@ -133,7 +145,9 @@ class App extends Component {
       showJSON: true,
       createdJSON:JSON.stringify(changedPropsObj)
     });
+
   }
+
   getAppComponents() {
     if(this.state.load) {
         return <div className="App">
@@ -146,7 +160,6 @@ class App extends Component {
                     <textarea rows="4" cols="50" value={this.state.createdJSON}></textarea> 
                   </div>
                 </div>
-                
               </div>
     } else {
       return <div>Loading...</div>
