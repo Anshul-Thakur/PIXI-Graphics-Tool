@@ -25,7 +25,7 @@ class TableComponent extends React.Component {
                 case "number" : 
                     ComponentType = NumberComponent;
                     break;
-                case "color-picker" : 
+                case "multi-color-picker" : 
                     ComponentType = ColorPickerComponent;
                     break;  
 
@@ -36,7 +36,7 @@ class TableComponent extends React.Component {
                 <td>{propObj.propName}</td>
                 <td>{propObj.propDescription}</td>
                 <td>
-                    <ComponentType onChange = {this.props.onChange} textProp= {propObj.propName} defaultValue= {propObj.propValue} propsOptions={propObj.propOptions}> </ComponentType>
+                    <ComponentType onChange={this.props.onChange} data={propObj}> </ComponentType>
                 </td>
             </tr>
         });

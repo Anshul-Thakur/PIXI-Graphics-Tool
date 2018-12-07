@@ -26,8 +26,8 @@ class DisplayComponent extends React.Component {
         this.app.stage.removeChild(this.container);
 
         this.container = new PIXI.Container();
-        this.container.height = "300px";
-        this.container.width= "500px";
+        //this.container.height = "300px";
+        //this.container.width= "500px";
         
         // Starting the text modification from here.
         this.text = new PIXI.Text(

@@ -5,7 +5,7 @@ class ColorPickerComponent extends React.Component {
         super(props);
         
         this.state={
-            selectedColors: this.props.defaultValue
+            selectedColors: this.props.data.propValue
         }; 
     }
 
@@ -18,17 +18,24 @@ class ColorPickerComponent extends React.Component {
             selectedColors: selectedColorArr
         });
 
-        this.props.onChange(this.state.selectedColors, this.props.textProp);
+        this.props.onChange(this.state.selectedColors, this.props.data.propName);
     }
 
     getColors =() => {
+        var cursorType = this.state.selectedColors.length > 1 ? "pointer" : "not-allowed";
+
         return this.state.selectedColors.map((color)=> {
-            return <span className= "selected-color">{color}</span>
+            var selectedColorStyle = {
+                background: color,
+                cursor: cursorType
+            };
+            return <div key={color + "-selected-Color"} style={selectedColorStyle} id={color + "-selected-Color"} className= "selected-color"></div>
         })
     }
 
     onColorContainerClick=(e)=> {
-        var selectedColor = e.target.innerText.trim(),
+        var selectedColorID = e.target.id.trim(),
+            selectedColor = selectedColorID.split("-")[0],
             prevSelectedColorsArray = this.state.selectedColors,
             newSelectedColorsArray;
 
@@ -44,7 +51,7 @@ class ColorPickerComponent extends React.Component {
                 selectedColors : newSelectedColorsArray
             });
             
-            this.props.onChange(newSelectedColorsArray, this.props.textProp);
+            this.props.onChange(newSelectedColorsArray, this.props.data.propName);
         }
     }
     

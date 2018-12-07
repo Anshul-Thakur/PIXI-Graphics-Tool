@@ -171,8 +171,6 @@ class App extends Component {
           {this.getAppComponents()}
         </div>
     );
-    
-    
   }
 }
 

@@ -4,7 +4,7 @@ class NumberComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            propValue : this.props.defaultValue
+            propValue : this.props.data.propValue
         }; 
     }
 
@@ -15,13 +15,13 @@ class NumberComponent extends React.Component {
         this.setState({
             propValue : e.target.value
         });
-        this.props.onChange(e, this.props.textProp);
+        this.props.onChange(e, this.props.data.propName);
     }
 
     render() {
         return(
             <div>
-               <input min="0" value = {this.state.propValue} onChange = {this.onChange.bind(this)} type="number"></input> 
+               <input min={this.props.data.min || "0"} max = {this.props.data.max || "1000"} step= {this.props.data.step || "1"} value = {this.state.propValue} onChange = {this.onChange.bind(this)} type="number"></input> 
             </div>
         );
     }

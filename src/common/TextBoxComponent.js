@@ -4,20 +4,21 @@ class TextBoxComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            propValue : this.props.defaultValue
+            propValue : this.props.data.propValue
         }; 
     }
     onChange = (e) => {
         this.setState({
             propValue : e.target.value
         });
-        this.props.onChange(e, this.props.textProp);
+        this.props.onChange(e, this.props.data.propName);
     }
     
     render() {
+        var propdsData = this.props.data;
         return(
             <div>
-               <input name ={this.props.textProp} value={this.state.propValue} onChange = {this.onChange.bind(this)} type="text"></input> 
+               <input name ={propdsData.propName} value={this.state.propValue} onChange = {this.onChange.bind(this)} type="text"></input> 
             </div>
         );
     }
