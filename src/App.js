@@ -91,7 +91,7 @@ class App extends Component {
       var value;
 
       if(textProperty === "fillGradientStops") {
-        this.setTextStyleWithInput(this.setfillgradientData(value), textProperty);
+        this.setTextStyleWithInput(this.setfillgradientData(e), textProperty);
         return;
       } else if (textProperty ==="fill") {
         this.setTextStyleWithInput(e, textProperty);
@@ -136,6 +136,10 @@ class App extends Component {
   }
 
   setfillgradientData = (value) => {
+    if (value === "") {
+      return [];
+    }
+
     value = value.split(",");
 
     return value.map((val)=>{

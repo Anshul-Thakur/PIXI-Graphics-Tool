@@ -3,6 +3,7 @@ import DropDownComponent from  '../common/DropDownComponent';
 import TextBoxComponent from  '../common/TextBoxComponent';
 import NumberComponent from '../common/NumberComponent';
 import ColorPickerComponent from '../common/ColorPickerComponent';
+import SingleColorPickerComponent from '../common/SingleColorPickerComponent';
 
 class TableComponent extends React.Component {
 
@@ -28,7 +29,9 @@ class TableComponent extends React.Component {
                 case "multi-color-picker" : 
                     ComponentType = ColorPickerComponent;
                     break;  
-
+                case "single-color-picker": 
+                    ComponentType = SingleColorPickerComponent;
+                    break;
                 default :
                     ComponentType = TextBoxComponent;
             }

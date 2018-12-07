@@ -8,10 +8,22 @@ class TextBoxComponent extends React.Component {
         }; 
     }
     onChange = (e) => {
-        this.setState({
-            propValue : e.target.value
+        var value = e.target.value.trim(),
+            cleanValue = true;
+
+        value.split(',').forEach(element => {
+            if(element>1) {
+                alert("Inserted Value should be between (0.0, 1.0) and seperated by ',' if multiple fill is given. Example if fill has 3 values give value as (0.1,0.1,0.8)");
+                cleanValue = false;
+            }
         });
-        this.props.onChange(e, this.props.data.propName);
+        value = cleanValue ? value : "";
+
+        this.setState({
+            propValue : value
+        });
+
+        this.props.onChange(value, this.props.data.propName);
     }
     
     render() {

@@ -63,7 +63,7 @@
 		"propName": "dropShadowColor",
 		"propValue": "#000000",
 		"propDescription": "A fill style to be used on the dropshadow e.g 'red', '#00FF00'",
-		"propInputType": "textBox",
+		"propInputType": "single-color-picker",
 		"propOptions": []
 	}, {
 		"propName": "dropShadowDistance",
@@ -91,7 +91,7 @@
 		}]
 	}, {
 		"propName": "fillGradientStops",
-		"propValue": 0,
+		"propValue": "",
 		"propDescription": "If fill is an array of colours to create a gradient, this array can set the stop points (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.",
 		"propInputType": "textbox",
 		"propOptions": []
@@ -189,7 +189,7 @@
 		"propName": "stroke",
 		"propValue": "black",
 		"propDescription": "A canvas fillstyle that will be used on the text stroke e.g 'blue', '#FCFF00'",
-		"propInputType": "textBox",
+		"propInputType": "single-color-picker",
 		"propOptions": []
 	}, {
 		"propName": "strokeThickness",

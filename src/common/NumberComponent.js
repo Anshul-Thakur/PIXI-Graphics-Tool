@@ -9,7 +9,7 @@ class NumberComponent extends React.Component {
     }
 
     onChange = (e) => {
-        if(e.target.value<0) {
+        if(+e.target.value < 0 || e.target.value === "") {
             e.target.value = "0";
         }
         this.setState({
