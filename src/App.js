@@ -78,6 +78,15 @@ class App extends Component {
     return dummyObj;
   }
 
+  handleDropShadowAngle=(e, textProperty) => {
+      var angle  = +e.target.value.trim(),
+          radianValue;
+
+      radianValue = (angle * Math.PI/180);
+
+      this.setTextStyleWithInput(radianValue, textProperty);
+  }
+
   onUserInput = (e, textProperty) => {
       var value;
 
@@ -87,6 +96,9 @@ class App extends Component {
       } else if (textProperty ==="fill") {
         this.setTextStyleWithInput(e, textProperty);
         return;      
+      } else if (textProperty === "dropShadowAngle") {
+        this.handleDropShadowAngle(e, textProperty);
+        return;
       }
 
       value = e.target.value.trim();

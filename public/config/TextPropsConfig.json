@@ -49,9 +49,9 @@
 		"propOptions": []
 	}, {
 		"propName": "dropShadowAngle",
-		"propValue": "0.5",
+		"propValue": "30",
 		"propDescription": "Set a angle of the drop shadow",
-		"propInputType": "textBox",
+		"propInputType": "number",
 		"propOptions": []
 	}, {
 		"propName": "dropShadowBlur",
