@@ -15,10 +15,19 @@ class DropDownComponent extends React.Component {
         })
     }
 
+    handleOnChange = (e)=> {
+        var value = e.target.value;
+
+        value = +value || value;
+
+        value = value === "0" ? 0 : value;
+        this.props.onChange(value, this.props.data.propName)
+    }
+
     render() {
         return(
             <div>
-               <select onChange = {(e) => {this.props.onChange(e, this.props.data.propName)}}>
+               <select onChange = {this.handleOnChange}>
                    {this.getOptions()}
                 </select> 
             </div>

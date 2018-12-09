@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       showJSON:false,
       text: "",
-      load: false,
+      loadTableComponent: false,
       textStyle: {
         align : 'left',
         breakWords: false,
@@ -62,7 +62,7 @@ class App extends Component {
     axious.get('./config/TextPropsConfig.json').then(function (response) {
       me.componentData = response.data;
       me.setState({
-        load: true
+        loadTableComponent: true
       })
     })
     .catch(function (error) {
@@ -78,8 +78,8 @@ class App extends Component {
     return dummyObj;
   }
 
-  handleDropShadowAngle=(e, textProperty) => {
-      var angle  = +e.target.value.trim(),
+  handleDropShadowAngle=(value, textProperty) => {
+      var angle  = value,
           radianValue;
 
       radianValue = (angle * Math.PI/180);
@@ -87,32 +87,25 @@ class App extends Component {
       this.setTextStyleWithInput(radianValue, textProperty);
   }
 
-  onUserInput = (e, textProperty) => {
-      var value;
+  onUserInput = (value, textProperty) => {
+      value = value.trim ? value.trim() : value;
 
-      if(textProperty === "fillGradientStops") {
-        this.setTextStyleWithInput(this.setfillgradientData(e), textProperty);
+      if (textProperty === "fillGradientStops") {
+        this.setTextStyleWithInput(this.setfillgradientData(value), textProperty);
         return;
       } else if (textProperty ==="fill") {
-        this.setTextStyleWithInput(e, textProperty);
+        this.setTextStyleWithInput(value, textProperty);
         return;      
       } else if (textProperty === "dropShadowAngle") {
-        this.handleDropShadowAngle(e, textProperty);
+        this.handleDropShadowAngle(value, textProperty);
         return;
       }
 
-      value = e.target.value.trim();
-
-      if (typeof value === 'string' && value.indexOf(",")>-1) {
-        value = value.split(",");
-      } else if(value === 'true') { // Converting [true,false] of string into bolean
+    
+      if (value === 'true') { // Converting (true,false) of string into bolean
         value  = true;
-      } else if(value === 'false') {
+      } else if (value === 'false') {
         value = false
-      } else if(value==="0") { // Handling "0" scenario
-        value = 0;
-      } else {
-        value  = +value || value; // Converting string to Number.
       }
             
       this.textStyle[textProperty] = value;
@@ -164,11 +157,40 @@ class App extends Component {
 
   }
 
+  reserProps= (e) => {
+    var me = this;
+    me.setState({
+      loadTableComponent: false
+    });
+    
+    axious.get('./config/TextPropsConfig.json').then(function (response) {
+      me.componentData = response.data;
+      me.setState({
+        textStyle : me.defaultTextStyle,
+        showJSON: false,
+        createdJSON: "",
+        loadTableComponent: true
+      });
+
+      me.textStyle = me.cloneObject(me.state.textStyle);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  loadTableComponent =()=>{
+    if (true) {
+      return <TableComponent reset={this.state.loadTableComponent} resetProps = {this.reserProps} onChange = {this.onUserInput.bind(this)} data = {this.componentData}></TableComponent>           
+    } else {
+      return <div>...</div>
+    }
+  }
+
   getAppComponents() {
-    if(this.state.load) {
         return <div className="App">
                 <TextEditorComponent updateTextData= {this.onUpdateTextData.bind(this)}/>
-                <TableComponent onChange = {this.onUserInput.bind(this)} data = {this.componentData}></TableComponent>
+                {this.loadTableComponent()}
                 <DisplayComponent data = {this.state}/>
                 <div className = "container">
                   <button  onClick= {this.getChangedProps}>Create JSON </button>
@@ -177,10 +199,8 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-    } else {
-      return <div>Loading...</div>
     }
-  }
+ 
   render() {
     return (
         <div>

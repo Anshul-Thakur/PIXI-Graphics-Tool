@@ -26,7 +26,7 @@ button {
 .textPropertiesContainer {
   overflow-y: scroll;
   width: 100%;
-  height: 300px;
+  height: 350px;
 }
 
 .canvas-container {
@@ -38,10 +38,7 @@ button {
   overflow: scroll;
   height:89vh;
 }
-canvas {
-  width: 1280px;
-  height: 720px;
-}
+
 
 .App {
   float: left;
@@ -68,4 +65,14 @@ canvas {
   to {
     transform: rotate(360deg);
   }
+}
+
+.reset-button-container {
+  border-bottom: 1px solid lightgrey;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.table-parent-container{
+  height: 430px;
 }

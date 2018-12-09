@@ -44,22 +44,34 @@ class TableComponent extends React.Component {
             </tr>
         });
     }
+
+    renderTable= () => {
+     if (this.props.reset) {
+        return  <div className="textPropertiesContainer">
+                    <table className="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                            {this.getHeaders()}
+                            </tr> 
+                        </thead>
+                        <tbody>
+                        {this.getPropsAsRows()}
+                        </tbody>
+                    </table>
+                </div>
+             } else {
+               return  <div>...Loading</div>
+             }
+           
+    }
    
     render() {
         return(
-            <div className ="container">
-            <div className="textPropertiesContainer">
-               <table className="table table-bordered table-striped">
-                   <thead>
-                       <tr>
-                        {this.getHeaders()}
-                       </tr> 
-                   </thead>
-                   <tbody>
-                   {this.getPropsAsRows()}
-                   </tbody>
-               </table>
-            </div>
+            <div className ="container table-parent-container">
+                <div className ="reset-button-container">
+                    <button onClick={this.props.resetProps}>Reset Properties</button>
+                </div>
+                {this.renderTable()}
             </div>
         );
     }

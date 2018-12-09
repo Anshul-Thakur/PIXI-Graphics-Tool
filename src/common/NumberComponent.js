@@ -15,7 +15,7 @@ class NumberComponent extends React.Component {
         this.setState({
             propValue : e.target.value
         });
-        this.props.onChange(e, this.props.data.propName);
+        this.props.onChange(+e.target.value, this.props.data.propName);
     }
 
     render() {
