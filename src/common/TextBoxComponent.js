@@ -11,12 +11,15 @@ class TextBoxComponent extends React.Component {
         var value = e.target.value.trim(),
             cleanValue = true;
 
-        value.split(',').forEach(element => {
-            if(element>1) {
-                alert("Inserted Value should be between (0.0, 1.0) and seperated by ',' if multiple fill is given. Example if fill has 3 values give value as (0.1,0.1,0.8)");
-                cleanValue = false;
-            }
-        });
+        if (this.props.data.propName === "fillGradientStops") {
+            value.split(',').forEach(element => {
+                if(+element>1||isNaN(+element)) {
+                    alert("Inserted Value should be between (0.0, 1.0) and seperated by ',' if multiple fill is given. Example if fill has 3 values give value as (0.1,0.1,0.8)");
+                    cleanValue = false;
+                } 
+            });
+        }
+        
         value = cleanValue ? value : "";
 
         this.setState({
