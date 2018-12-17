@@ -104,6 +104,7 @@
 	}, {
 		"propName": "fontSize",
 		"propValue": 26,
+		"min": "1",
 		"propDescription": "The font size (as a number it converts to px, but as a string, equivalents are '26px','20pt','160%' or '1.6em')",
 		"propInputType": "number",
 		"propOptions": []
